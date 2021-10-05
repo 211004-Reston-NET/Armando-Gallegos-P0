@@ -16,7 +16,7 @@ namespace Helloworld
             Console.WriteLine(Armando.Owner);
             Console.WriteLine("just write something");
             Armando.TerminalInput = Console.ReadLine();
-            Console.WriteLine(Armando.TerminalInput);
+            Console.WriteLine("you wrote: " + Armando.TerminalInput);
 
         }
         public static int Example()
