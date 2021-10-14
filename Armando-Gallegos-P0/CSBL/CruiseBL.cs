@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using CSDL;
 using CSModels;
+using CSDL;
 
 namespace CSBL
 {
@@ -18,9 +18,14 @@ namespace CSBL
             _repo = p_repo;
         }
         //SETTER
-        public List<Activity> GetAllStores()
+        public List<Activity> GetAllActivities()
         {
-            return  _repo.GetAllStores();
+            return  _repo.GetAllActivities();
+        }
+
+        public List<Activity> GetAllRestaurants()
+        {
+            return  _repo.GetAllRestaurants();
         }
     }
 }

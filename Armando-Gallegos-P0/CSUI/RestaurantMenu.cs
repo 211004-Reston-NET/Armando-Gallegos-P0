@@ -1,18 +1,13 @@
-using System;
-using System.Collections.Generic;
-using CSModels;
-using CSBL;
-
 namespace CSUI
 {
-    public class ShowActivities : ISMenu
+    public class RestaurantMenu : ISMenu
     {
-        private CruiseBL _storeBL;
+        private CruiseBL _restBL;
 
         //Another dependency Injection
         public ShowActivities(CruiseBL p_storeBL)
         {
-            _storeBL = p_storeBL;
+            _storeBL = p_restBL;
         }
         public MenuChoices CustomerChoice()
         {
@@ -31,7 +26,7 @@ namespace CSUI
 
         public void Menu()
         {
-            Console.WriteLine("List of Activities");
+            Console.WriteLine("List of Restaurants");
             List<Activity>listOfStores = _storeBL.GetAllStores();
             foreach (Activity stor in listOfStores)
             {

@@ -12,6 +12,6 @@ namespace CSModel
         public int CabinNo { get; set; }
         List<string> Activities = new List<string>();
         string restaurant;
-        
+         
     }
 }

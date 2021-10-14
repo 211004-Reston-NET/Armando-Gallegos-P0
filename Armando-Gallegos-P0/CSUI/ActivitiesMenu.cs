@@ -1,6 +1,6 @@
 using System;
 
-namespace StoreUI
+namespace CSUI
 {
      public class ActivitiesMenu : ISMenu
     {

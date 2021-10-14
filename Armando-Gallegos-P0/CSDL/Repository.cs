@@ -11,7 +11,8 @@ namespace CSDL
     public class Repository
     {
         //The relative path to the JSON
-        private const string _filepath = "./../CSDL/JSON/Activities.json";
+        private const string _actFilepath = "./../CSDL/JSON/Activities.json";
+        private const string _restFilepath = "./../CSDL/JSON/Activities.json";
         private string _jsonString;
 
 /*public Store AddStores(Store p_store)
@@ -23,16 +24,27 @@ namespace CSDL
             return p_store;
         } */
 
-        public List<Activity> GetAllStores()
+        public List<Activity> GetAllActivities()
         {
             /// <summary>
             /// This is where the Json content will be stored
             /// </summary>
             /// <returns></returns>
-            _jsonString = File.ReadAllText(_filepath);
+            _jsonString = File.ReadAllText(_actFilepath);
 
             //Converting from string(JSON) into an object
             return JsonSerializer.Deserialize<List<Activity>>(_jsonString);
+        }
+        public List<Restaurant> GetAllRestaurants()
+        {
+            /// <summary>
+            /// This is where the Json content will be stored
+            /// </summary>
+            /// <returns></returns>
+            _jsonString = File.ReadAllText(_restFilepath);
+
+            //Converting from string(JSON) into an object
+            return JsonSerializer.Deserialize<List<Restaurant>>(_jsonString);
         }
     }
 }

@@ -5,7 +5,7 @@ using EmployeeModel;
 using CSBL;
 using CSDL;
 
-namespace StoreUI
+namespace CSUI
 {
     class SUI
     {
@@ -34,6 +34,8 @@ namespace StoreUI
                         break;
                     case MenuChoices.ShowActivities:
                         page = new ShowActivities(new CruiseBL(new Repository()));
+                    case MenuChoices.RestaurantMenu:
+                        page = new RestaurantMenu();
                         break;
                     case MenuChoices.Exit:
                         Console.WriteLine("You are exiting the application");
