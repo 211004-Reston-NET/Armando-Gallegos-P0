@@ -5,39 +5,38 @@ using CSBL;
 
 namespace CSUI
 {
-    public class ShowActivities : ISMenu
+    public class ShowRestaurants : ISMenu
     {
-        private IActivityBL _actBL;
+        private IRestaurantBL _restaurantBL;
 
         //Another dependency Injection
-        public ShowActivities(IActivityBL p_actBL)
+        public ShowRestaurants(IRestaurantBL p_restauranteBL)
         {
-            _actBL = p_actBL;
+            _restaurantBL = p_restauranteBL;
         }
-
         public MenuChoices UserChoice()
         {
-            string ActivityChoice = Console.ReadLine();
-            switch(ActivityChoice)
+            string RestaurantChoice = Console.ReadLine();
+            switch(RestaurantChoice)
             {
                     case "0":
-                        return MenuChoices.ActivitiesMenu;
+                        return MenuChoices.RestaurantMenu;
                     default:
                         Console.WriteLine("Please enter a valid response!");
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
-                        return MenuChoices.ShowActivities;
+                        return MenuChoices.ShowRestaurants;
             }
         }
 
         public void Menu()
         {
-            Console.WriteLine("List of Activities");
-            List<Activity>listOfActivities = _actBL.GetAllActivities();
-            foreach (Activity act in listOfActivities)
+            Console.WriteLine("List of Restaurants");
+            List<Restaurant>listOfRestaurants = _restaurantBL.GetAllRestaurants();
+            foreach (Restaurant rest in listOfRestaurants)
             {
                 Console.WriteLine("================");
-                Console.WriteLine(act);
+                Console.WriteLine(rest);
                 Console.WriteLine("=================");
             }
             Console.WriteLine("[0] - Go Back");

@@ -12,7 +12,7 @@ namespace CSUI
         static void Main(string[] args)
         {
             Passanger Cust = new Passanger();
-            Employee Emp = new Employee();
+            Attendant Emp = new Attendant();
             //I had Menu instead of MainMenu but it gave me a syntax error
             //MainMenu Men = new MainMenu(); 
 
@@ -22,7 +22,7 @@ namespace CSUI
             {
                 Console.Clear();
                 page.Menu();
-                MenuChoices choice = page.CustomerChoice();
+                MenuChoices choice = page.UserChoice();
         
                 switch (choice)
                 {
@@ -32,10 +32,23 @@ namespace CSUI
                     case MenuChoices.ActivitiesMenu:
                         page = new ActivitiesMenu();
                         break;
+                    case MenuChoices.AddActivity:
+                        page = new AddActivity(new ActivityBL(new Repository()));
+                        break;
+                    case MenuChoices.AddRestaurant:
+                        page = new AddRestaurant(new RestaurantBL(new Repository()));
+                        break;
                     case MenuChoices.ShowActivities:
-                        page = new ShowActivities(new CruiseBL(new Repository()));
+                        page = new ShowActivities(new ActivityBL(new Repository()));
+                        break;
                     case MenuChoices.RestaurantMenu:
                         page = new RestaurantMenu();
+                        break;
+                    case MenuChoices.ShowRestaurants:
+                        page = new ShowRestaurants(new RestaurantBL(new Repository()));
+                        break;
+                    case MenuChoices.AdminMenu:
+                        page = new AdminMenu();
                         break;
                     case MenuChoices.Exit:
                         Console.WriteLine("You are exiting the application");
@@ -44,7 +57,7 @@ namespace CSUI
                         repeat = false;
                         break;
                     default:
-                        Console.WriteLine("Coder you forgot yo write a menue option catch");
+                        Console.WriteLine("Coder you forgot yo write a menu option catch");
                         break;
                 }
             }

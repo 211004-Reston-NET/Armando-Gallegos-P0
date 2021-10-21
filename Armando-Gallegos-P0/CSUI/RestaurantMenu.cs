@@ -1,40 +1,37 @@
+using System;
+using System.Collections.Generic;
+using CSModels;
+
 namespace CSUI
 {
     public class RestaurantMenu : ISMenu
     {
-        private CruiseBL _restBL;
-
-        //Another dependency Injection
-        public ShowActivities(CruiseBL p_storeBL)
+        public MenuChoices UserChoice()
         {
-            _storeBL = p_restBL;
-        }
-        public MenuChoices CustomerChoice()
-        {
-            string ActivityChoice = Console.ReadLine();
-            switch(ActivityChoice)
+            string RestaurantChoice = Console.ReadLine();
+            switch(RestaurantChoice)
             {
+                    case "2":
+                        return MenuChoices.ShowRestaurants;
+                    case "1":
+                        return MenuChoices.BookRestaurant;
                     case "0":
-                        return MenuChoices.ActivitiesMenu;
+                        return MenuChoices.MainMenu;
                     default:
                         Console.WriteLine("Please enter a valid response!");
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
-                        return MenuChoices.ShowActivities;
+                        return MenuChoices.MainMenu;
             }
         }
 
         public void Menu()
-        {
-            Console.WriteLine("List of Restaurants");
-            List<Activity>listOfStores = _storeBL.GetAllStores();
-            foreach (Activity stor in listOfStores)
             {
-                Console.WriteLine("================");
-                Console.WriteLine(stor);
-                Console.WriteLine("=================");
+                Console.WriteLine("Welcome to the Ships Activities Menu");
+                Console.WriteLine("What do you want to do?");
+                Console.WriteLine("[2] - List all of the Restaurants on ship");
+                Console.WriteLine("[1] - Book a table at your Restaurant");
+                Console.WriteLine("[0] - Return to the Main Menu");
             }
-            Console.WriteLine("[0] - Go Back");
-        }
     }
 }

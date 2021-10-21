@@ -8,7 +8,7 @@ namespace EmployeeModel
     public class Attendant
     {
         private  string _attName;
-        public string EmployeeName 
+        public string AttendantName 
         { 
             get
             {

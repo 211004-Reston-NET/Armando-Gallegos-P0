@@ -7,13 +7,13 @@ namespace CSModels
     public class Activity
     {
         private string _activityName;
-        private string _storeCity;
-        private string _storeState;
+        private string _activityDescription;
+
         public string AName
         {
              get {return _activityName;}
              set {
-                 if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
+                 if (!Regex.IsMatch(value, @"^[A-Za-z .,]+$"))
                  {
 
                      throw new Exception("Activity Name can only be Alphabetic!");
@@ -22,21 +22,21 @@ namespace CSModels
                 _activityName = value;
              }
         }
-        public string SState
+        public string ADescription
         {
             
-             get {return _storeState;}
+             get {return _activityDescription;}
              set {
-                 if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
+                 if (!Regex.IsMatch(value, @"^[A-Za-z .,']+$"))
                  {
 
-                     throw new Exception("Activity Name can only be Alphabetic!");
+                     throw new Exception("Activity description can only be Alphabetic!");
 
                  }
-                _storeState = value;
+                _activityDescription = value;
              }
         }
-        public string SCity
+    /*    public string SCity
         {
             
              get {return _storeCity;}
@@ -49,10 +49,10 @@ namespace CSModels
                  }
                 _storeCity = value;
              }
-        }
+        } */
         public override string ToString()
         {
-            return $"Store Name: {AName}\nStore State: {SState}";
+            return $"Activity Description: {AName}\nActivity Description: {ADescription}";
         }
     }
 }

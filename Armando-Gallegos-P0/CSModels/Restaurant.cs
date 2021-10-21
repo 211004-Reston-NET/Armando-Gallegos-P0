@@ -25,7 +25,7 @@ namespace CSModels
             
              get {return _restDescription;}
              set {
-                 if (!Regex.IsMatch(value, @"^[A-Za-z .]+$"))
+                 if (!Regex.IsMatch(value, @"^[A-Za-z .,']+$"))
                  {
 
                      throw new Exception("Activity Name can only be Alphabetic!");
@@ -52,5 +52,9 @@ namespace CSModels
         {
             return $"Store Name: {AName}\nStore State: {SState}";
         }*/
+        public override string ToString()
+        {
+            return $"Name of Restaurant: {RName}\nDescription: {RDescription}";
+        }
     }
 }

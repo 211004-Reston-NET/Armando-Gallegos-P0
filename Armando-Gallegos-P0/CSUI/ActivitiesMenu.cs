@@ -4,10 +4,10 @@ namespace CSUI
 {
      public class ActivitiesMenu : ISMenu
     {
-        public MenuChoices CustomerChoice()
+        public MenuChoices UserChoice()
         {
-            string StoreChoice = Console.ReadLine();
-            switch(StoreChoice)
+            string ActivityChoice = Console.ReadLine();
+            switch(ActivityChoice)
             {
                     case "2":
                         return MenuChoices.ShowActivities;
