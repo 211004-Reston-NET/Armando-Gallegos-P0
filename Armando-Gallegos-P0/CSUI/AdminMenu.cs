@@ -10,17 +10,17 @@ namespace CSUI
             string MainChoice = Console.ReadLine();
             switch(MainChoice)
             {
-       //         case "1":
-       //             return MenuChoices.ShowActivities;
                 case "1":
-                    return MenuChoices.ShowPassengers;
+                    return MenuChoices.ShowActivities;
                 case "2":
-                    return MenuChoices.AddPassanger;
+                    return MenuChoices.ShowPassengers;
                 case "3":
+                    return MenuChoices.AddPassanger;
+                case "4":
                     return MenuChoices.AddActivity;
              //   case "5":
              //       return MenuChoices.AddRestaurant;
-                case "4":
+                case "5":
                     return MenuChoices.AddAttendant;
                 case "0":
                     return MenuChoices.MainMenu;
@@ -36,12 +36,12 @@ namespace CSUI
         {
             Console.WriteLine("This is the Administror's Access Menu");
             Console.WriteLine("Access restricted to Authorized Crew Members");
-            Console.WriteLine("[4] - Add Attendants");
+            Console.WriteLine("[5] - Add Attendants");
        //     Console.WriteLine("[5] - Add/Reserve Restaurant");
-            Console.WriteLine("[3] - Add Activies");
-            Console.WriteLine("[2] - Add Passangers");
-            Console.WriteLine("[1] - Show Ships Passengers");
-        //    Console.WriteLine("[1] - Show Ships Activities");
+            Console.WriteLine("[4] - Add Activies");
+            Console.WriteLine("[3] - Add Passangers");
+            Console.WriteLine("[2] - Show Ships Passengers");
+            Console.WriteLine("[1] - Show Ships Activities");
             Console.WriteLine("[0] - Return to the Main");
         }
     }

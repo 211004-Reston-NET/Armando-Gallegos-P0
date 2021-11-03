@@ -17,6 +17,10 @@ namespace CSBL
 
         Activity AddActivity(Activity p_act);
 
+        Activity GetActivitybyId(int p_AId);
+
+        Activity UpdateActivity(Activity p_act, int p_changed);
+
       //  Activity RemoveActivity(Activity p_act);
 
     }

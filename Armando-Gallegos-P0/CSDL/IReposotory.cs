@@ -39,6 +39,10 @@ namespace CSDL
 
         Passenger GetPassengerbyCabNo(int cabin_no);
 
+        Activity GetActivitybyId(int p_AId);
+
+        Activity UpdateActivitySpots(Activity p_act);
+
        // List<PassengerActivities> GetAPassanger(Passenger p_act);
     }
 }

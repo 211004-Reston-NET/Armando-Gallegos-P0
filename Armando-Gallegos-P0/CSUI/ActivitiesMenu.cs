@@ -21,8 +21,8 @@ namespace CSUI
                   //      return MenuChoices.ShowRestaurants;
                     case "2":
                         return MenuChoices.SearchActivitiesMenu;
-                    case "1":
-                        return MenuChoices.ActivitiesMenu2;
+               //     case "1":
+                //        return MenuChoices.ActivitiesMenu2;
                     case "0":
                         return MenuChoices.MainMenu;
                     default:
@@ -38,7 +38,7 @@ namespace CSUI
                 Console.WriteLine("What do you want to do?");
                 Console.WriteLine("[3] - List all Ship Board Activities");
                 Console.WriteLine("[2] - List all of of your Activities");
-                Console.WriteLine("[1] - Make a booking for an activity");
+             //   Console.WriteLine("[1] - Make a booking for an activity");
              //   Console.WriteLine("[1] - Book a table at your Restaurant");
                 Console.WriteLine("[0] - Return to the Main Menu");
             }

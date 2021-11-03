@@ -176,5 +176,15 @@ namespace CSDL
         {
             throw new NotImplementedException();
         }
+
+        public Activity GetActivitybyId(int p_AId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Activity UpdateActivitySpots(Activity p_act)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

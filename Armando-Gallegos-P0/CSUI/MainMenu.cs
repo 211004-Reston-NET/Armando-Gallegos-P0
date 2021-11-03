@@ -46,8 +46,8 @@ namespace CSUI
             Console.WriteLine("[3] - Star of The North"/*+istOfShips[0].SName*/);
             Console.WriteLine("[2] - Houston Steamer"/*+listOfShips[1].SName*/);
             Console.WriteLine("[1] - Buffalo Bayou Liner"/*+listOfShips[2].SName*/);
-            Console.WriteLine("---------------------------------------");
             Console.WriteLine("[0] - Exit");
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine("[X] - Admin Menu");
         }
     }

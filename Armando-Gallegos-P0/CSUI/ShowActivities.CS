@@ -21,7 +21,24 @@ namespace CSUI
             switch(ActivityChoice)
             {
                     case "0":
-                        return MenuChoices.ActivitiesMenu1;
+                        return MenuChoices.AdminMenu;
+                    case "1":
+                        Console.WriteLine("Enter the Id No of the Activity you want to Add spots from.");
+                        try
+                        {
+                             int actId = Int32.Parse(Console.ReadLine());
+                             Activity actFound = _actBL.GetActivitybyId(actId);
+                             Console.WriteLine("Input how many spots you want to add to Activity");
+                             int spotsAdded = Int32.Parse(Console.ReadLine());   
+                             _actBL.UpdateActivity(actFound, spotsAdded);                     }
+                        catch (System.FormatException)
+                        {
+                            Console.WriteLine("Please input a numeric value!");
+                            Console.WriteLine("Please enter to continue");
+                            Console.ReadLine();
+                            return MenuChoices.ShowActivities;
+                        }
+                        return MenuChoices.ShowActivities;
                     default:
                         Console.WriteLine("Please enter a valid response!");
                         Console.WriteLine("Press enter to continue");
@@ -40,6 +57,7 @@ namespace CSUI
                 Console.WriteLine(act);
                 Console.WriteLine("=================");
             }
+            Console.WriteLine("[1] - Select an Activity by Id");
             Console.WriteLine("[0] - Go Back");
         }
     }

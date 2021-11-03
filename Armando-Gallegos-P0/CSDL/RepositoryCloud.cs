@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Entity = CSDL.Entities;
 using System.Linq;
 using CSModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace CSDL
 {
@@ -197,6 +198,40 @@ namespace CSDL
                 PName = passSearch.PName,
                 PClass = passSearch.PClass
             };
+        }
+
+        public Model.Activity GetActivitybyId(int p_AId)
+        {
+            Entity.Activity actFound = _context.Activities.AsNoTracking().FirstOrDefault(act => act.AId == p_AId);
+
+            return new Model.Activity()
+            {
+                AId = actFound.AId,
+                AName = actFound.AName,
+                ADescription = actFound.ADescription,
+                AAttendant = actFound.AInstructor,
+                ASpots = actFound.ASpots
+
+            };
+        }
+
+        public Activity UpdateActivitySpots(Activity p_act)
+        {
+            Entity.Activity actChanged = new Entity.Activity()
+            {
+                AId = p_act.AId,
+                AName = p_act.AName,
+                ADescription = p_act.ADescription,
+                AInstructor = p_act.AAttendant,
+                ASpots = p_act.ASpots,
+                AShip = p_act.AShip
+            };
+
+            _context.Activities.Update(actChanged);
+
+            _context.SaveChanges();
+
+            return p_act;
         }
     }
 }

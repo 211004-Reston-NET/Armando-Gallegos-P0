@@ -29,6 +29,11 @@ namespace CSBL
             return  listOfActivities;
         }
 
+        public Activity GetActivitybyId(int p_AId)
+        {
+            return _repo.GetActivitybyId(p_AId);
+        }
+
         //public List<Activity> BookActivity(Activity p_act)
        // {
             //This will capitalize all of the Names in the activities JSON
@@ -45,9 +50,16 @@ namespace CSBL
             return _repo.AddActivity(p_act);
         }
 
-      /*  public Activity RemoveActivity(Activity p_act)
+        public Activity UpdateActivity(Activity p_act, int p_changed)
         {
-            return _repo.RemoveActivity(p_act);
-        }*/
+            p_act.ASpots += p_changed;
+
+            return _repo.UpdateActivitySpots(p_act);
+        }
+
+        /*  public Activity RemoveActivity(Activity p_act)
+          {
+              return _repo.RemoveActivity(p_act);
+          }*/
     }
 }
