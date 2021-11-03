@@ -4,7 +4,7 @@ using CSModels;
 using CSDL;
 
 namespace CSBL
-{
+{ 
     public class RestaurantBL : IRestaurantBL
     {
         /// <summary>
@@ -33,5 +33,10 @@ namespace CSBL
         {
             return _repo.AddRestaurant(p_rest);
         }
+
+    /*    public Restaurant RemoveRestaurant(Restaurant p_rest)
+        {
+            return _repo.RemoveRestaurant(p_rest);
+        } */
     }
 }

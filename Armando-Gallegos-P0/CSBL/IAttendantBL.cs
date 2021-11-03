@@ -3,18 +3,19 @@ using CSModels;
 /// <summary>
 ///
 /// </summary>
-namespace CSBL 
+namespace CSBL
 {
-    public interface IRestaurantBL
+    public interface IAttendantBL
     {
         /// <summary>
         /// This returns the lists stored in the JSON's
         /// </summary>
         /// <returns></returns>
-        List<Restaurant> GetAllRestaurants();
-        Restaurant AddRestaurant(Restaurant p_rest);
+        List<Attendants> GetAllAttendants();
 
-    //    Restaurant RemoveRestaurant(Restaurant p_rest);
+        Attendants AddAttendant(Attendants p_att);
+
+     //   Attendants RemoveAttendant(Attendants p_att);
 
     }
 }

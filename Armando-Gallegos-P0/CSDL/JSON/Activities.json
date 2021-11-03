@@ -14,5 +14,9 @@
   {
     "AName": "Black Jack",
     "ADescription": "A Card Name"
+  },
+  {
+    "AName": null,
+    "ADescription": null
   }
 ]

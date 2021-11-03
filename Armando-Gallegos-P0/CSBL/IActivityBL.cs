@@ -13,7 +13,11 @@ namespace CSBL
         /// <returns></returns>
         List<Activity> GetAllActivities();
 
+       // List<Activity> BookActivity(Activity p_act);
+
         Activity AddActivity(Activity p_act);
+
+      //  Activity RemoveActivity(Activity p_act);
 
     }
 }

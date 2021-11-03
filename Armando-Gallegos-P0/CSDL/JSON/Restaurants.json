@@ -1,18 +1,6 @@
 [
   {
-    "RName": "Jinja",
-    "RDescription": "a very good Ramen shop"
-  },
-  {
-    "RName": "Quiznos",
-    "RDescription": "A sandwish shop"
-  },
-  {
-    "RName": "Popeys",
-    "RDescription": "a chicken place"
-  },
-  {
     "RName": "McDonalds",
-    "RDescription": "fast food"
+    "RDescription": "A urger Joint"
   }
 ]

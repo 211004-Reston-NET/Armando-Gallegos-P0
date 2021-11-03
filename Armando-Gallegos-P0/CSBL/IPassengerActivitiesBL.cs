@@ -5,16 +5,15 @@ using CSModels;
 /// </summary>
 namespace CSBL 
 {
-    public interface IRestaurantBL
+    public interface IPassengerActivitiesBL
     {
         /// <summary>
         /// This returns the lists stored in the JSON's
         /// </summary>
         /// <returns></returns>
-        List<Restaurant> GetAllRestaurants();
-        Restaurant AddRestaurant(Restaurant p_rest);
+        List<PassengerActivities> GetPassActivities(Passenger p_pass);
 
-    //    Restaurant RemoveRestaurant(Restaurant p_rest);
+     //   Passenger AddPassActivity(Passenger p_pass);
 
     }
 }
