@@ -1,21 +1,32 @@
+using CSModels;
+using CSBL;
 using System;
+using System.Collections.Generic;
 
 namespace CSUI
 {
 
     public class MainMenu : ISMenu
     {
-        public MenuChoices UserChoice()
+      //  private IShipBL _shipBL;
+
+    /*    public MainMenu(IShipBL p_shipBL)
         {
+            _shipBL = p_shipBL;
+        }*/
+
+        public MenuChoices UserChoice()
+        { 
             string MainChoice = Console.ReadLine();
+           // List<Ship> listOfShips = _shipBL.GetAllShips();
             switch(MainChoice)
             {
                 case "1":
-                    return MenuChoices.RestaurantMenu;
+                    return MenuChoices.ActivitiesMenu1;
                 case "2":
-                    return MenuChoices.ActivitiesMenu;
+                    return MenuChoices.ActivitiesMenu2;
                 case "3":
-                    return MenuChoices.BookRestaurant;
+                    return MenuChoices.ActivitiesMenu3;
                 case "0":
                     return MenuChoices.Exit;
                 case "X":
@@ -29,11 +40,13 @@ namespace CSUI
         }
         public void Menu()
         {
-            Console.WriteLine("Welcome to the StarLine Cruise Ship");
-            Console.WriteLine("What do you want to do?");
-            Console.WriteLine("[3] - List your Bookings");
-            Console.WriteLine("[2] - Go to the Cruise Activities Menu");
-            Console.WriteLine("[1] - Book a Restaurant");
+          //  List<Ship> listOfShips = _shipBL.GetAllShips();
+            Console.WriteLine("Welcome to the Houston Shipline");
+            Console.WriteLine("Chose your ship");
+            Console.WriteLine("[3] - Star of The North"/*+istOfShips[0].SName*/);
+            Console.WriteLine("[2] - Houston Steamer"/*+listOfShips[1].SName*/);
+            Console.WriteLine("[1] - Buffalo Bayou Liner"/*+listOfShips[2].SName*/);
+            Console.WriteLine("---------------------------------------");
             Console.WriteLine("[0] - Exit");
             Console.WriteLine("[X] - Admin Menu");
         }

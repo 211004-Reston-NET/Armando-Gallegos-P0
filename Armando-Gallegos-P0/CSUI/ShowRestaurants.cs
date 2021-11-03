@@ -17,22 +17,22 @@ namespace CSUI
         public MenuChoices UserChoice()
         {
             string RestaurantChoice = Console.ReadLine();
-            switch(RestaurantChoice)
+            switch (RestaurantChoice)
             {
-                    case "0":
-                        return MenuChoices.RestaurantMenu;
-                    default:
-                        Console.WriteLine("Please enter a valid response!");
-                        Console.WriteLine("Press enter to continue");
-                        Console.ReadLine();
-                        return MenuChoices.ShowRestaurants;
+                case "0":
+                    return MenuChoices.ActivitiesMenu1;
+                default:
+                    Console.WriteLine("Please enter a valid response!");
+                    Console.WriteLine("Press enter to continue");
+                    Console.ReadLine();
+                    return MenuChoices.ShowRestaurants;
             }
         }
 
         public void Menu()
         {
             Console.WriteLine("List of Restaurants");
-            List<Restaurant>listOfRestaurants = _restaurantBL.GetAllRestaurants();
+            List<Restaurant> listOfRestaurants = _restaurantBL.GetAllRestaurants();
             foreach (Restaurant rest in listOfRestaurants)
             {
                 Console.WriteLine("================");

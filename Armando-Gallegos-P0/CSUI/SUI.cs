@@ -1,9 +1,11 @@
-﻿using System;
+﻿using System.IO;
+using Microsoft.Extensions.Configuration;
+using System;
 using CSModels;
-using CSModel;
-using EmployeeModel;
 using CSBL;
 using CSDL;
+using Microsoft.EntityFrameworkCore;
+using CSDL.Entities;
 
 namespace CSUI
 {
@@ -11,41 +13,78 @@ namespace CSUI
     {
         static void Main(string[] args)
         {
-            Passanger Cust = new Passanger();
+            Passenger Cust = new Passenger();
             Attendant Emp = new Attendant();
             //I had Menu instead of MainMenu but it gave me a syntax error
             //MainMenu Men = new MainMenu(); 
 
             bool repeat = true;
             ISMenu page = new MainMenu();
-            while(repeat)
+            
+
+            while (repeat)
             {
                 Console.Clear();
                 page.Menu();
+                var config = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsetting.JSON")
+                    .Build();
+
+                DbContextOptions<_211004revatureagdemodbContext> opts = new DbContextOptionsBuilder<_211004revatureagdemodbContext>()
+                .UseSqlServer(config.GetConnectionString("projectdb"))
+                .Options;
+
                 MenuChoices choice = page.UserChoice();
-        
                 switch (choice)
                 {
                     case MenuChoices.MainMenu:
                         page = new MainMenu();
                         break;
-                    case MenuChoices.ActivitiesMenu:
-                        page = new ActivitiesMenu();
+                    case MenuChoices.ActivitiesMenu1:
+                        page = new ActivitiesMenu("BUFALO BAYOU LINER");
                         break;
-                    case MenuChoices.AddActivity:
-                        page = new AddActivity(new ActivityBL(new Repository()));
+                    case MenuChoices.ActivitiesMenu2:
+                        page = new ActivitiesMenu("HOUSTON STEAMER");
                         break;
-                    case MenuChoices.AddRestaurant:
-                        page = new AddRestaurant(new RestaurantBL(new Repository()));
-                        break;
-                    case MenuChoices.ShowActivities:
-                        page = new ShowActivities(new ActivityBL(new Repository()));
+                    case MenuChoices.ActivitiesMenu3:
+                        page = new ActivitiesMenu("STAR OF THE NORTH");
                         break;
                     case MenuChoices.RestaurantMenu:
                         page = new RestaurantMenu();
                         break;
+                    case MenuChoices.AddActivity:
+                        page = new AddActivity(new ActivityBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                   // case MenuChoices.BookActivity:
+                  //      page = new BookActivity(new ActivityBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        //break;
+                    case MenuChoices.AddRestaurant:
+                        page = new AddRestaurant(new RestaurantBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                     case MenuChoices.AddPassanger:
+                        page = new AddPassenger(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                    case MenuChoices.AddAttendant:
+                        page = new AddAttendant(new AttendantBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                    case MenuChoices.ShowActivities:
+                        page = new ShowActivities(new ActivityBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
                     case MenuChoices.ShowRestaurants:
-                        page = new ShowRestaurants(new RestaurantBL(new Repository()));
+                        page = new ShowRestaurants(new RestaurantBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                    case MenuChoices.ShowPassengers:
+                        page = new ShowPassengers(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                    case MenuChoices.SearchPassbyName:
+                        page = new SearchPassbyName(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                    case MenuChoices.SearchPassbyCabNo:
+                        page = new SearchPassbyCabNo(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                    case MenuChoices.PassActivitesMenu:
+                        page = new PassActiviesMenu();
                         break;
                     case MenuChoices.AdminMenu:
                         page = new AdminMenu();
@@ -60,6 +99,7 @@ namespace CSUI
                         Console.WriteLine("Coder you forgot yo write a menu option catch");
                         break;
                 }
+                
             }
         }
     }

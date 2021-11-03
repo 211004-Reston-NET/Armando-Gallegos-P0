@@ -1,15 +1,15 @@
-using System;
+/*using System;
 using CSBL;
 using CSModels;
 
 namespace CSUI
 {
-    public class AddActivity :ISMenu
+    public class BookActivity :ISMenu
     {
         private static Activity _act = new Activity();
         private IActivityBL _actBL;
 
-        public AddActivity(IActivityBL p_actBL)
+        public BookActivity(IActivityBL p_actBL)
         {
             _actBL = p_actBL;
         }
@@ -17,25 +17,19 @@ namespace CSUI
         {
             bool correct = false;
             string answer;
+            //string name;
+
             while(!correct)
             {
-                Console.WriteLine("Adding a new Activity");
-                _act.AShip = 1;
-                Console.Write("Activity Name: ");
-                _act.AName = Console.ReadLine();
-                Console.Write("Activity Description: ");
-                _act.ADescription = Console.ReadLine();
-                Console.Write("Activity Instructor: ");
-                _act.AAttendant = Console.ReadLine();
-                Console.Write("Number of Spots Available: ");
-                _act.ASpots = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-                Console.WriteLine("You have entered:");
+                Console.WriteLine("Book an  Activity");
+                Console.Write("Please Enter the Name of the Activity you wish to book: ");
+               /* name = Console.ReadLine();
+                Console.WriteLine(name); // _act.AName = name;
+                var _actSearch = _act.Find(x => x.AName == name); //end of first block out here
+                Console.WriteLine("The Activities that match your request:");
                 Console.WriteLine("================");
                 Console.WriteLine("Activity Name: " + _act.AName);
                 Console.WriteLine("Activity Description: " + _act.ADescription);
-                Console.WriteLine("Activity Instructor: " + _act.AAttendant);
-                Console.WriteLine("Activity Spots Available: " + _act.ASpots);
                 Console.WriteLine("=================");
                 Console.WriteLine("Is this Correct?");
                 Console.WriteLine("Enter [Y] for Yes or [N] to re enter the Activity Info.");
@@ -43,7 +37,7 @@ namespace CSUI
                 if(answer == "Y")
                 {
                     correct = true;
-                    _actBL.AddActivity(_act);
+                    _actBL.BookActivity(_act);
                 }
                 else 
                     Console.Clear();
@@ -52,7 +46,7 @@ namespace CSUI
         
         public MenuChoices UserChoice()
         {
-            return MenuChoices.AdminMenu;
+            return MenuChoices.ActivitiesMenu;
         }
     }
-}  
+}  */

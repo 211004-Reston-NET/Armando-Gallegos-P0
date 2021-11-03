@@ -21,7 +21,7 @@ namespace CSUI
             switch(ActivityChoice)
             {
                     case "0":
-                        return MenuChoices.ActivitiesMenu;
+                        return MenuChoices.ActivitiesMenu1;
                     default:
                         Console.WriteLine("Please enter a valid response!");
                         Console.WriteLine("Press enter to continue");
