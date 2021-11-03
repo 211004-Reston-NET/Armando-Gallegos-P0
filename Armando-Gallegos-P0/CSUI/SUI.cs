@@ -50,18 +50,18 @@ namespace CSUI
                     case MenuChoices.ActivitiesMenu3:
                         page = new ActivitiesMenu("STAR OF THE NORTH");
                         break;
-                    case MenuChoices.RestaurantMenu:
-                        page = new RestaurantMenu();
-                        break;
+               //     case MenuChoices.RestaurantMenu:
+               //         page = new RestaurantMenu();
+               //         break;
                     case MenuChoices.AddActivity:
                         page = new AddActivity(new ActivityBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         break;
                    // case MenuChoices.BookActivity:
                   //      page = new BookActivity(new ActivityBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         //break;
-                    case MenuChoices.AddRestaurant:
-                        page = new AddRestaurant(new RestaurantBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
-                        break;
+                //    case MenuChoices.AddRestaurant:
+                //        page = new AddRestaurant(new RestaurantBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+               //         break;
                      case MenuChoices.AddPassanger:
                         page = new AddPassenger(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         break;
@@ -71,20 +71,26 @@ namespace CSUI
                     case MenuChoices.ShowActivities:
                         page = new ShowActivities(new ActivityBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         break;
-                    case MenuChoices.ShowRestaurants:
-                        page = new ShowRestaurants(new RestaurantBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
-                        break;
+                 //   case MenuChoices.ShowRestaurants:
+                 //       page = new ShowRestaurants(new RestaurantBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                //        break;
                     case MenuChoices.ShowPassengers:
                         page = new ShowPassengers(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         break;
                     case MenuChoices.SearchPassbyName:
                         page = new SearchPassbyName(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         break;
-                    case MenuChoices.SearchPassbyCabNo:
-                        page = new SearchPassbyCabNo(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                    case MenuChoices.SearchActivitiesMenu:
+                        page = new SearchActivitiesMenu(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         break;
-                    case MenuChoices.PassActivitesMenu:
-                        page = new PassActiviesMenu();
+                   // case MenuChoices.SearchPassbyCabNo:
+                   //     page = new SearchPassbyCabNo(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                   //     break;
+                    case MenuChoices.PassActivitesAdmin:
+                        page = new PassActiviesAdmin(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
+                        break;
+                    case MenuChoices.PassActivities:
+                        page = new PassActivies(new PassengerBL(new RepositoryCloud(new _211004revatureagdemodbContext(opts))));
                         break;
                     case MenuChoices.AdminMenu:
                         page = new AdminMenu();

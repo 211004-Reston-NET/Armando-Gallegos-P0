@@ -40,9 +40,17 @@ namespace CSBL
         public Passenger GetPassengerbyCabNo(int CabNo)
         {
             //This will capitalize all of the Names in the activities JSON
-            List<Passenger> passFound = _repo.GetAllPassengers();
+            Passenger passFound = _repo.GetPassengerbyCabNo(CabNo);
 
-            return passFound.Where(passFound => passFound.CabinNo.Equals(CabNo));
+           // Restaurant restFound = _repo.GetRestaurantById(p_Id);
+
+            if (passFound == null)
+            {
+                throw new Exception("Restaurant was not found!");
+            }
+
+            return passFound;
+           // return passFound.Where(passFound => passFound.CabinNo.Equals(CabNo));
             /*{
                 if (passFound => passFound.CabinNo.Equals(CabNo) == null)
                 {
@@ -50,7 +58,12 @@ namespace CSBL
                 }
             })
             return passFound;*/
-        } 
+        }
+
+        public List<PassengerActivities> GetPassActivities(Passenger p_pass)
+        {
+            return _repo.GetPassActivities(p_pass);
+        }
 
         public Passenger AddPassenger(Passenger p_pass)
         {

@@ -13,6 +13,7 @@ namespace CSBL
         /// <returns></returns>
         List<Passenger> GetAllPassengers();
         List<Passenger> GetPassenger(string p_name);
+        List<PassengerActivities> GetPassActivities(Passenger p_pass);
         Passenger GetPassengerbyCabNo(int CabNo);
         Passenger AddPassenger(Passenger p_pass);
      //   Passenger RemovePassenger(Passenger p_pass);

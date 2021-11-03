@@ -11,10 +11,12 @@ namespace CSUI
         ShowActivities,
         BookActivity,
         ShowRestaurants,
+        SearchActivitiesMenu,
         ShowPassengers,
         SearchPassbyName,
         SearchPassbyCabNo,
-        PassActivitesMenu,
+        PassActivitesAdmin,
+        PassActivities,
         BookRestaurant,
         AdminMenu,
         AddPassanger,
@@ -23,16 +25,6 @@ namespace CSUI
         AddActivity,
         Exit
     }
-
-  /*  public enum AdminMenuChoices
-    {
-        AdminMenu,
-        AddPassanger,
-        AddAttendant,
-        AddRestaurant,
-        AddActivity,
-        Exit 
-    }*/
 
     //This will create the menus for our project
     public interface ISMenu

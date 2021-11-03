@@ -43,5 +43,10 @@ namespace CSModels
                 _actName = value;
             }
         }
+        public override string ToString()
+        {
+            return $"Passanger: {PName}\n Activity Id: {AIdNo}";
+
+        }
     }
 }

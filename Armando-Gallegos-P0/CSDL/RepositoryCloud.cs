@@ -181,6 +181,7 @@ namespace CSDL
             {
                 listOfPActivities.Add(new Model.PassengerActivities()
                 {
+                    PName = passact.PassName,
                     AIdNo = passact.AIdNo,
                     CNo = passact.PcabinNo
                 });
